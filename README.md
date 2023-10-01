@@ -1,6 +1,12 @@
 # Smart_MediBox
 Smart MediBox that reminds to get medication on Time
 
-Downloaded from https://wokwi.com/projects/367694266330028033
+project available at https://wokwi.com/projects/367694266330028033
 
-Simulate this project on https://wokwi.com
+Project simulated on https://wokwi.com
+
+
+# To Run the Node-Red Dashboard
+1. Install NodeJS
+2. Install Node-Red
+3. Run the Node-Red with flows.json file
