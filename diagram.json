@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "Navinda Perera",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -64.29, "left": 166.94, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -30.92,
+      "left": 452.31,
+      "attrs": { "temperature": "21.2" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -51.93,
+      "left": 18.86,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -232.53,
+      "left": 62.67,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -261.12, "left": 314.21, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v18.6", "h-136.63" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht1:SDA", "esp:D15", "green", [ "v0" ] ],
+    [ "bz1:2", "esp:D12", "red", [ "v0" ] ],
+    [ "bz1:1", "esp:GND.2", "black", [ "v0" ] ],
+    [ "esp:GND.1", "ldr1:GND", "black", [ "h38.04", "v-166.25", "h-23.02", "v-127.61" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "h-29.64", "v127.61", "h21.71", "v169.05" ] ],
+    [
+      "ldr1:VCC",
+      "esp:3V3",
+      "red",
+      [ "h30.91", "v114.34", "h107.31", "v190.99", "h0", "v3.94", "h-7.88" ]
+    ],
+    [ "servo1:V+", "esp:VIN", "#8f4814", [ "h-20.08", "v87.61", "h-161.46", "v214.62" ] ],
+    [ "ldr1:AO", "esp:D35", "green", [ "h-85.18", "v185.48" ] ],
+    [ "servo1:PWM", "esp:D21", "green", [ "h-20.45", "v194.88" ] ]
+  ],
+  "dependencies": {}
+}
